@@ -51,7 +51,7 @@ function App() {
   return (
     <div>
       <h1>haroun</h1>
-      <Pizza />
+      <Pizza /
       <Pizza />
       <Pizza />
     </div>
