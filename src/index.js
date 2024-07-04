@@ -50,10 +50,9 @@ function App() {
 
   return (
     <div>
-      <h1>haroun</h1>
-      <Pizza /
-      <Pizza />
-      <Pizza />
+      <Header />
+      <Menu />
+      <Footer />
     </div>
   );
 }
@@ -64,6 +63,28 @@ root.render(
     <App />
   </React.StrictMode>
 );
+
+function Header() {
+  return <h1>Fast React Pizza Co.</h1>;
+}
+function Menu() {
+  return (
+    <div>
+      <h2> Our Menu</h2>
+      <Pizza />
+      <Pizza />
+      <Pizza />
+      <Pizza />
+    </div>
+  );
+}
+function Footer() {
+  return (
+    <footer>{new Date().toLocaleTimeString()}.we are currently open</footer>
+  );
+  //return React.createElement("footer", null, "we are currently open ");
+}
+//const Test = () =>
 function Pizza() {
   return (
     <div>
