@@ -75,14 +75,29 @@ function Header() {
   );
 }
 function Menu() {
+  const pissas = pizzaData;
   return (
     <main className="menu">
       <h2> Our Menu</h2>
-      <ul className="pizzas">
-        {pizzaData.map((pizza) => (
-          <Pizza pizzaObj={pizza} key={pizza.name} />
-        ))}
-      </ul>
+      {/*pissas && (
+        <ul className="pizzas">
+          {pizzaData.map((pizza) => (
+            <Pizza pizzaObj={pizza} key={pizza.name} />
+          ))}
+        </ul>
+      )*/}
+      {/* condtion rendering using ternary operator
+       */}
+      {pissas.length > 0 ? (
+        <ul className="pizzas">
+          {pizzaData.map((pizza) => (
+            <Pizza pizzaObj={pizza} key={pizza.name} />
+          ))}
+        </ul>
+      ) : (
+        <p>we're still working on our menu please came back later :)</p>
+      )}
+
       {/*<Pizza
         name="Pizza spinaci"
         ingredients="Tomato, mozarella, ham, aragula, and burrata cheese"
