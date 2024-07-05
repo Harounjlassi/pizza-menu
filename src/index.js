@@ -90,7 +90,7 @@ function Menu() {
       {/* condtion rendering using ternary operator
        */}
       {pissas.length > 0 ? (
-        <>
+        <React.Fragment>
           <p>
             Authentic Italian cuisine . 6 creative dishes tochoose from.All from
             our stone oven, all organic, all dishes.
@@ -100,7 +100,7 @@ function Menu() {
               <Pizza pizzaObj={pizza} key={pizza.name} />
             ))}
           </ul>
-        </>
+        </React.Fragment>
       ) : (
         <p>we're still working on our menu please came back later :)</p>
       )}
@@ -122,14 +122,21 @@ function Menu() {
 }
 function Pizza({ pizzaObj }) {
   // console.log(props);
-  if (pizzaObj.soldOut) return null;
+  //if (pizzaObj.soldOut) return null;
+
   return (
-    <li className="pizza">
+    <li className={`pizza ${pizzaObj.soldOut ? "sold-out" : ""}`}>
       <img src={pizzaObj.photoName} alt={pizzaObj.name} />
       <div>
         <h3> {pizzaObj.name}</h3>
         <p>{pizzaObj.ingredients}</p>
-        <span>{pizzaObj.price + 3}</span>
+        {pizzaObj.soldOut ? (
+          <span>SOLD OUT</span>
+        ) : (
+          <span>pizzaObj.price + 3</span>
+        )}
+        {/*        <span>{pizzaObj.soldOut ? "SOLD OUT" : pizzaObj.price + 3}</span>
+         */}{" "}
       </div>
     </li>
   );
