@@ -79,6 +79,7 @@ function Menu() {
   return (
     <main className="menu">
       <h2> Our Menu</h2>
+
       {/*pissas && (
         <ul className="pizzas">
           {pizzaData.map((pizza) => (
@@ -89,11 +90,17 @@ function Menu() {
       {/* condtion rendering using ternary operator
        */}
       {pissas.length > 0 ? (
-        <ul className="pizzas">
-          {pizzaData.map((pizza) => (
-            <Pizza pizzaObj={pizza} key={pizza.name} />
-          ))}
-        </ul>
+        <>
+          <p>
+            Authentic Italian cuisine . 6 creative dishes tochoose from.All from
+            our stone oven, all organic, all dishes.
+          </p>
+          <ul className="pizzas">
+            {pizzaData.map((pizza) => (
+              <Pizza pizzaObj={pizza} key={pizza.name} />
+            ))}
+          </ul>
+        </>
       ) : (
         <p>we're still working on our menu please came back later :)</p>
       )}
